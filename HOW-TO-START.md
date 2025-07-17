@@ -16,7 +16,7 @@ Before starting, ensure you have the following installed:
 
 ### 1. Clone and Navigate
 ```bash
-git clone <repository-url>
+git clone https://github.com/rps2-cmd/coding-sample.git
 cd rpsls-game
 ```
 
@@ -43,7 +43,7 @@ This starts both backend (port 5000) and frontend (port 3003) simultaneously.
 
 **Access the application:**
 - Frontend: http://localhost:3003
-- Backend API: http://localhost:5000/api
+- Backend API: http://localhost:5000
 
 ## 🛠️ Available Scripts
 
@@ -91,13 +91,13 @@ npm run lint       # Run ESLint
 You can test the backend API endpoints directly:
 ```bash
 # Get all choices
-curl http://localhost:5000/api/choices
+curl http://localhost:5000/choices
 
 # Play a round
-curl -X POST http://localhost:5000/api/play -H "Content-Type: application/json" -d '{"player": 1}'
+curl -X POST http://localhost:5000/play -H "Content-Type: application/json" -d '{"player": 1}'
 
 # Get game stats
-curl http://localhost:5000/api/stats
+curl http://localhost:5000/stats
 ```
 
 ## 🚢 Production Deployment
