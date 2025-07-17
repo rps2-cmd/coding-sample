@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE_URL = "http://localhost:5000/api";
+const API_BASE_URL = "http://localhost:5000";
 
 // Axios instance with default config
 const api = axios.create({
@@ -26,7 +26,7 @@ api.interceptors.request.use(
 api.interceptors.response.use(
   (response) => {
     console.log(`API Response: ${response.status} ${response.config.url}`);
-    response?.data?.result && console.log(`Result: ${response?.data?.result}`);
+    response?.data?.results && console.log(`Result: ${response?.data?.results}`);
     
     return response;
   },

@@ -50,7 +50,7 @@ const playRound = async (playerChoiceId) => {
     const gameResult = getWinner(playerChoiceId, computerChoice.id);
 
     const roundResult = {
-      result: gameResult.result, // 'win', 'lose', 'tie'
+      results: gameResult.result, // 'win', 'lose', 'tie'
       player: playerChoiceId,
       computer: computerChoice.id,
       timestamp: new Date().toISOString(),
@@ -97,9 +97,9 @@ const clearHistory = () => {
 const getStats = () => {
   const total = history.length;
 
-  const wins = history.filter((game) => game.result === "win").length;
-  const losses = history.filter((game) => game.result === "lose").length;
-  const ties = history.filter((game) => game.result === "tie").length;
+  const wins = history.filter((game) => game.results === "win").length;
+  const losses = history.filter((game) => game.results === "lose").length;
+  const ties = history.filter((game) => game.results === "tie").length;
 
   const choiceFrequency = history.reduce((acc, game) => {
     acc[game.playerChoice] = (acc[game.playerChoice] || 0) + 1;

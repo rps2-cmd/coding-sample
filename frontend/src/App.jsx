@@ -60,7 +60,7 @@ function App() {
       setGameResult({
         playerChoice: selectedChoice,
         computerChoice: choices.find((c) => c.id === result.computer),
-        message: RESULT_OPTIONS[result.result] || RESULT_OPTIONS.tie,
+        message: RESULT_OPTIONS[result.results] || RESULT_OPTIONS.tie,
       });
       
       loadStats();

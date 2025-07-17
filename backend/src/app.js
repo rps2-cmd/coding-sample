@@ -14,7 +14,7 @@ const app = express();
 const router = Router();
 
 const PORT = process.env.PORT || 5000;
-const DEVELOPMENT_URL = ["http://localhost:3003", "http://127.0.0.1:3003"];
+const DEVELOPMENT_URL = ["http://localhost:3003", "http://127.0.0.1:3003", 'https://codechallenge.boohma.com'];
 const isProduction = process.env.NODE_ENV === "production";
 
 // Middleware
@@ -35,7 +35,7 @@ router
   .delete("/history", clearGameHistory)
   .get("/stats", getGameStats);
 
-app.use("/api", router);
+app.use("/", router);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
